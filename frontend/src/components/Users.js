@@ -1,10 +1,10 @@
-import { useSelector } from "react-redux"
-import { Link } from "react-router-dom"
-import styled from "styled-components"
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const Page = styled.div`
   padding: 18px 32px;
-`
+`;
 
 const Table = styled.table`
   border-radius: 16px;
@@ -19,10 +19,10 @@ const Table = styled.table`
       font-weight: 700;
     }
   }
-`
+`;
 
 const Users = () => {
-  const users = useSelector((state) => state.users)
+  const users = useSelector((state) => state.users);
 
   return (
     <Page>
@@ -45,7 +45,7 @@ const Users = () => {
         </tbody>
       </Table>
     </Page>
-  )
-}
+  );
+};
 
-export default Users
+export default Users;

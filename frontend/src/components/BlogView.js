@@ -1,9 +1,9 @@
-import { useParams } from "react-router-dom"
-import { useSelector } from "react-redux"
-import { likeBlog, commentBlog } from "../reducers/blogReducer"
-import { useDispatch } from "react-redux"
-import { useState } from "react"
-import styled from "styled-components"
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { likeBlog, commentBlog } from "../reducers/blogReducer";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
+import styled from "styled-components";
 
 const BlogSection = styled.div`
   background: #090909;
@@ -11,23 +11,23 @@ const BlogSection = styled.div`
   background: linear-gradient(to left, #444, #090909);
 
   padding: 144px 32px;
-`
+`;
 
 const BlogTitle = styled.h1`
   font-size: 72px;
   color: #eee;
   margin-bottom: -18px;
-`
+`;
 
 const BlogAuthor = styled.h2`
   font-size: 24px;
   color: #999;
   font-weight: 400;
-`
+`;
 
 const BlogUrl = styled.a`
   color: #fff;
-`
+`;
 
 const BlogLikes = styled.div`
   color: #fff;
@@ -35,7 +35,7 @@ const BlogLikes = styled.div`
   display: flex;
   align-items: end;
   gap: 18px;
-`
+`;
 
 const LikeButton = styled.button`
   padding: 4px 12px;
@@ -57,21 +57,21 @@ const LikeButton = styled.button`
     box-shadow: 0 0px 0 rgba(52, 82, 173, 1);
   }
   transition: all 50ms ease-out;
-`
+`;
 
 const BlogUser = styled.div`
   color: #fff;
   font-size: 12px;
   font-weight: 300;
   margin-top: 12px;
-`
+`;
 
 const CommentSection = styled.div`
   padding: 18px 32px;
   h3 {
     margin-bottom: 12px;
   }
-`
+`;
 const CommentForm = styled.form`
   width: max-content;
 
@@ -117,7 +117,7 @@ const CommentForm = styled.form`
     }
     transition: all 50ms ease-out;
   }
-`
+`;
 
 const CommentList = styled.ul`
   list-style-type: none;
@@ -126,26 +126,26 @@ const CommentList = styled.ul`
     padding: 14px 0;
     border-bottom: 1px solid #ddd;
   }
-`
+`;
 
 const BlogView = () => {
-  const dispatch = useDispatch()
-  const [comment, setComment] = useState("")
+  const dispatch = useDispatch();
+  const [comment, setComment] = useState("");
 
-  const id = useParams().id
-  const blog = useSelector((state) => state.blogs.find((b) => b.id === id))
+  const id = useParams().id;
+  const blog = useSelector((state) => state.blogs.find((b) => b.id === id));
 
-  if (!blog) return null
+  if (!blog) return null;
 
   const handleLike = () => {
-    dispatch(likeBlog(blog.id))
-  }
+    dispatch(likeBlog(blog.id));
+  };
 
   const handleComment = async (event) => {
-    event.preventDefault()
-    dispatch(commentBlog(blog.id, comment))
-    setComment("")
-  }
+    event.preventDefault();
+    dispatch(commentBlog(blog.id, comment));
+    setComment("");
+  };
 
   return (
     <div>
@@ -154,7 +154,7 @@ const BlogView = () => {
         <BlogAuthor>By {blog.author}</BlogAuthor>
         <BlogUrl href={blog.url}>{blog.url}</BlogUrl>
         <BlogLikes>
-          {blog.likes} likes{" "}
+          <span className="likeCount">{blog.likes}</span> likes
           <LikeButton id="like-button" onClick={handleLike}>
             Like
           </LikeButton>
@@ -182,7 +182,7 @@ const BlogView = () => {
         </CommentList>
       </CommentSection>
     </div>
-  )
-}
+  );
+};
 
-export default BlogView
+export default BlogView;

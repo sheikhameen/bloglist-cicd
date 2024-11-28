@@ -1,12 +1,12 @@
-import { useState, forwardRef, useImperativeHandle } from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
+import { useState, forwardRef, useImperativeHandle } from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
 const Main = styled.div`
   background: #ddd;
   padding: 16px;
   border-radius: 12px;
-`
+`;
 
 const TogglableButton = styled.button`
   padding: 8px 24px;
@@ -29,7 +29,7 @@ const TogglableButton = styled.button`
     box-shadow: 0 0px 0 rgb(30, 123, 30);
   }
   transition: all 50ms ease-out;
-`
+`;
 
 const CancelButton = styled.button`
   padding: 4px 16px;
@@ -53,26 +53,26 @@ const CancelButton = styled.button`
     box-shadow: 0 0px 0 #a00;
   }
   transition: all 50ms ease-out;
-`
+`;
 
 const Header = styled.h2`
   font-size: 24px;
   font-weight: 400;
-`
+`;
 
 const Togglable = forwardRef((props, ref) => {
-  const [visibility, setVisibility] = useState(false)
+  const [visibility, setVisibility] = useState(false);
 
   const toggleVisibility = () => {
-    setVisibility(!visibility)
-  }
+    setVisibility(!visibility);
+  };
 
   useImperativeHandle(ref, () => ({
     toggleVisibility,
-  }))
+  }));
 
-  const hideWhenVisible = { display: visibility ? "none" : "" }
-  const showWhenVisible = { display: visibility ? "" : "none" }
+  const hideWhenVisible = { display: visibility ? "none" : "" };
+  const showWhenVisible = { display: visibility ? "" : "none" };
 
   return (
     <Main>
@@ -87,13 +87,13 @@ const Togglable = forwardRef((props, ref) => {
         {props.children}
       </div>
     </Main>
-  )
-})
+  );
+});
 
-Togglable.displayName = "Togglable"
+Togglable.displayName = "Togglable";
 
 Togglable.propTypes = {
   buttonLabel: PropTypes.string.isRequired,
-}
+};
 
-export default Togglable
+export default Togglable;

@@ -1,42 +1,42 @@
-import axios from "axios"
+import axios from "axios";
 
-const baseUrl = "/api/users"
-let token = null
+const baseUrl = "/api/users";
+let token = null;
 
-const STORAGE_KEY = "loggedBlogAppUser"
+const STORAGE_KEY = "loggedBlogAppUser";
 
 const setCurrentUser = (user) => {
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(user))
-  token = user.token
-}
+  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
+  token = user.token;
+};
 
 const getCurrentUser = () => {
-  const loggedUserJSON = window.localStorage.getItem(STORAGE_KEY)
+  const loggedUserJSON = window.localStorage.getItem(STORAGE_KEY);
   if (loggedUserJSON) {
-    const user = JSON.parse(loggedUserJSON)
-    token = user.token
-    return user
+    const user = JSON.parse(loggedUserJSON);
+    token = user.token;
+    return user;
   }
 
-  return null
-}
+  return null;
+};
 
 const clearCurrentUser = () => {
-  localStorage.clear()
-  token = null
-}
+  localStorage.clear();
+  token = null;
+};
 
 const getAllUsers = async () => {
-  const response = await axios.get(baseUrl)
-  return response.data
-}
+  const response = await axios.get(baseUrl);
+  return response.data;
+};
 
 const getOneUser = async (id) => {
-  const response = await axios.get(`${baseUrl}/${id}`)
-  return response.data
-}
+  const response = await axios.get(`${baseUrl}/${id}`);
+  return response.data;
+};
 
-const getToken = () => token
+const getToken = () => token;
 
 export default {
   setCurrentUser,
@@ -45,4 +45,4 @@ export default {
   getToken,
   getAllUsers,
   getOneUser,
-}
+};

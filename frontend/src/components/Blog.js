@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
-import styled from "styled-components"
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const BlogLink = styled(Link)`
   padding: 8px 0;
@@ -10,15 +10,15 @@ const BlogLink = styled(Link)`
   :hover {
     background-color: #eee;
   }
-`
+`;
 
 const Blog = ({ blog }) => {
   return (
-    <BlogLink to={`/blogs/${blog.id}`}>
+    <BlogLink to={`/blogs/${blog.id}`} className="blog">
       <span className="title">{blog.title}</span>{" "}
       <span className="author">by {blog.author}</span>
     </BlogLink>
-  )
-}
+  );
+};
 
-export default Blog
+export default Blog;

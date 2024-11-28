@@ -1,6 +1,6 @@
-import { useState } from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
+import { useState } from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
 const Form = styled.form`
   width: max-content;
@@ -50,26 +50,26 @@ const Form = styled.form`
     }
     transition: all 50ms ease-out;
   }
-`
+`;
 
 const BlogForm = ({ createBlog }) => {
-  const [title, setTitle] = useState("")
-  const [author, setAuthor] = useState("")
-  const [url, setUrl] = useState("")
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [url, setUrl] = useState("");
 
   const handleCreate = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     createBlog({
       title,
       author,
       url,
-    })
+    });
 
-    setTitle("")
-    setAuthor("")
-    setUrl("")
-  }
+    setTitle("");
+    setAuthor("");
+    setUrl("");
+  };
 
   return (
     <Form onSubmit={handleCreate}>
@@ -108,11 +108,11 @@ const BlogForm = ({ createBlog }) => {
       </div>
       <input type="submit" id="create-button" value="Create" />
     </Form>
-  )
-}
+  );
+};
 
 BlogForm.propTypes = {
   createBlog: PropTypes.func.isRequired,
-}
+};
 
-export default BlogForm
+export default BlogForm;

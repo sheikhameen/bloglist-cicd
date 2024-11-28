@@ -1,28 +1,28 @@
-import { useEffect, useRef } from "react"
-import { useSelector, useDispatch } from "react-redux"
-import { Routes, Route, Link } from "react-router-dom"
+import { useEffect, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Routes, Route, Link } from "react-router-dom";
 
-import BlogList from "./components/BlogList"
-import Notification from "./components/Notification"
+import BlogList from "./components/BlogList";
+import Notification from "./components/Notification";
 
-import { initializeBlogs, createBlog } from "./reducers/blogReducer"
+import { initializeBlogs, createBlog } from "./reducers/blogReducer";
 import {
   logUserFromLocalStorage,
   loginUser,
   logoutUser,
-} from "./reducers/userReducer"
-import LoginForm from "./components/LoginForm"
-import { initializeUsers } from "./reducers/usersReducer"
-import Users from "./components/Users"
-import User from "./components/User"
-import BlogView from "./components/BlogView"
+} from "./reducers/userReducer";
+import LoginForm from "./components/LoginForm";
+import { initializeUsers } from "./reducers/usersReducer";
+import Users from "./components/Users";
+import User from "./components/User";
+import BlogView from "./components/BlogView";
 
-import styled from "styled-components"
+import styled from "styled-components";
 
 const Container = styled.div`
   max-width: 1440px;
   margin: 0 auto;
-`
+`;
 
 const NavBar = styled.div`
   padding: 18px 32px;
@@ -74,33 +74,33 @@ const NavBar = styled.div`
     }
     transition: all 50ms ease-out;
   }
-`
+`;
 
 const App = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const user = useSelector((state) => state.user)
+  const user = useSelector((state) => state.user);
 
-  const blogFormRef = useRef()
+  const blogFormRef = useRef();
 
   useEffect(() => {
-    dispatch(logUserFromLocalStorage())
-    dispatch(initializeBlogs())
-    dispatch(initializeUsers())
-  }, [])
+    dispatch(logUserFromLocalStorage());
+    dispatch(initializeBlogs());
+    dispatch(initializeUsers());
+  }, []);
 
   const handleLogin = (username, password) => {
-    dispatch(loginUser(username, password))
-  }
+    dispatch(loginUser(username, password));
+  };
 
   const handleLogout = () => {
-    dispatch(logoutUser())
-  }
+    dispatch(logoutUser());
+  };
 
   const handleCreateBlog = (blog) => {
-    dispatch(createBlog(blog))
-    blogFormRef.current.toggleVisibility() // close form after create
-  }
+    dispatch(createBlog(blog));
+    blogFormRef.current.toggleVisibility(); // close form after create
+  };
 
   if (user === null) {
     return (
@@ -108,7 +108,7 @@ const App = () => {
         <Notification />
         <LoginForm onLogin={handleLogin} />
       </>
-    )
+    );
   }
 
   return (
@@ -138,7 +138,7 @@ const App = () => {
         <Route path="/blogs/:id" element={<BlogView />} />
       </Routes>
     </Container>
-  )
-}
+  );
+};
 
-export default App
+export default App;

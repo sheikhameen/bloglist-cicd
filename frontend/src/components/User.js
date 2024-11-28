@@ -1,7 +1,7 @@
-import { useParams } from "react-router-dom"
-import { useSelector } from "react-redux"
-import Blog from "./Blog"
-import styled from "styled-components"
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Blog from "./Blog";
+import styled from "styled-components";
 
 const Page = styled.div`
   padding: 18px 32px;
@@ -11,12 +11,12 @@ const Page = styled.div`
     padding-top: 18px;
     color: #999;
   }
-`
+`;
 
 const Name = styled.h1`
   font-size: 72px;
   color: #111;
-`
+`;
 
 const BlogList = styled.ul`
   list-style-type: none;
@@ -25,13 +25,13 @@ const BlogList = styled.ul`
     padding: 2px 0;
     border-bottom: 1px solid #ddd;
   }
-`
+`;
 
 const User = () => {
-  const id = useParams().id
-  const user = useSelector((state) => state.users.find((u) => u.id === id))
+  const id = useParams().id;
+  const user = useSelector((state) => state.users.find((u) => u.id === id));
 
-  if (!user) return null
+  if (!user) return null;
 
   return (
     <Page>
@@ -45,7 +45,7 @@ const User = () => {
         ))}
       </BlogList>
     </Page>
-  )
-}
+  );
+};
 
-export default User
+export default User;

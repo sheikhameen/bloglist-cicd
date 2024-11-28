@@ -1,5 +1,5 @@
-import { useState } from "react"
-import styled from "styled-components"
+import { useState } from "react";
+import styled from "styled-components";
 
 const Page = styled.div`
   background: #f5f5f5;
@@ -7,7 +7,7 @@ const Page = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-`
+`;
 
 const LoginCard = styled.div`
   background-color: #fff;
@@ -23,7 +23,7 @@ const LoginCard = styled.div`
     font-size: 24px;
     font-weight: 400;
   }
-`
+`;
 
 const Form = styled.form`
   display: flex;
@@ -67,16 +67,16 @@ const Form = styled.form`
     }
     transition: all 50ms ease-out;
   }
-`
+`;
 
 const LoginForm = ({ onLogin }) => {
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-    onLogin(username, password)
-  }
+    event.preventDefault();
+    onLogin(username, password);
+  };
 
   return (
     <Page>
@@ -107,7 +107,7 @@ const LoginForm = ({ onLogin }) => {
         </Form>
       </LoginCard>
     </Page>
-  )
-}
+  );
+};
 
-export default LoginForm
+export default LoginForm;

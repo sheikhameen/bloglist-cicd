@@ -34,19 +34,19 @@ Cypress.Commands.add("createBlog", ({ title, author, url, likes }) => {
         JSON.parse(window.localStorage.getItem("loggedBloglistUser")).token
       }`,
     },
-  })
+  });
 
-  cy.visit("http://localhost:3000")
-})
+  cy.visit("http://localhost:3000");
+});
 
 Cypress.Commands.add("createUser", ({ name, username, password }) => {
   const user = {
     name,
     username,
     password,
-  }
-  cy.request("POST", "http://localhost:3003/api/users", user)
-})
+  };
+  cy.request("POST", "http://localhost:3003/api/users", user);
+});
 
 Cypress.Commands.add("login", ({ username, password }) => {
   cy.request("POST", "http://localhost:3003/api/login", {
@@ -56,7 +56,9 @@ Cypress.Commands.add("login", ({ username, password }) => {
     window.localStorage.setItem(
       "loggedBloglistUser",
       JSON.stringify(response.body)
-    )
-    cy.visit("http://localhost:3000")
-  })
-})
+    );
+    cy.get("#username").type("ameen");
+    cy.get("#password").type("ameenpassword");
+    cy.contains("Login").click();
+  });
+});
