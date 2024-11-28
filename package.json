@@ -9,6 +9,7 @@
   "scripts": {
     "install:all": "npm install --prefix frontend && npm install --prefix backend",
     "start:frontend": "cross-env BROWSER=none npm run start --prefix frontend",
+    "build:frontend": "npm run build --prefix frontend",
     "start:backend": "npm run start --prefix backend",
     "start:backend:dev": "npm run dev --prefix backend",
     "start:backend:test": "npm run start:test --prefix backend",
