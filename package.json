@@ -21,15 +21,15 @@
     "e2e": "start-server-and-test start:test http://localhost:3000 cy:run",
     "lint": "npm run lint --prefix frontend"
   },
+  "devDependencies": {
+    "cypress": "^13.16.0",
+    "start-server-and-test": "^2.0.8"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "concurrently": "^9.1.0"
-  },
-  "devDependencies": {
-    "cypress": "^13.16.0",
-    "start-server-and-test": "^2.0.8"
   }
 }

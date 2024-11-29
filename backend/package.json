@@ -9,8 +9,6 @@
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand --forceExit",
     "start:test": "cross-env NODE_ENV=test node index.js"
   },
-  "author": "Sheikh Ameen",
-  "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "bloglist-cicd": "file:..",
@@ -28,6 +26,8 @@
     "nodemon": "^2.0.15",
     "supertest": "^6.2.2"
   },
+  "author": "Sheikh Ameen",
+  "license": "ISC",
   "jest": {
     "testEnvironment": "node"
   }

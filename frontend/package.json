@@ -2,6 +2,15 @@
   "name": "bloglist-frontend",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "cypress:open": "cypress open",
+    "test:e2e": "cypress run"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.16.5",
@@ -18,14 +27,11 @@
     "styled-components": "^5.3.6",
     "web-vitals": "^3.1.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint .",
-    "cypress:open": "cypress open",
-    "test:e2e": "cypress run"
+  "devDependencies": {
+    "cypress": "^12.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-cypress": "^2.15.2",
+    "prettier": "2.8.1"
   },
   "eslintConfig": {
     "extends": [
@@ -45,11 +51,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:3003",
-  "devDependencies": {
-    "cypress": "^12.1.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-cypress": "^2.15.2",
-    "prettier": "2.8.1"
-  }
+  "proxy": "http://localhost:3003"
 }
