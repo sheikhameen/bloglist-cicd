@@ -6,7 +6,7 @@ describe("Blog app", function () {
       username: "ameen",
       password: "ameenpassword",
     });
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3003");
   });
 
   it("Login form is shown", function () {
