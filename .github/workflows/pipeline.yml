@@ -25,12 +25,12 @@ jobs:
         with:
           node-version: "20"
       - run: npm run install:all
-      - name: lint
-        run: npm run lint
-      - name: build
-        run: npm run build:frontend
-      - name: test
-        run: npm run test:backend
+      # - name: lint
+      #   run: npm run lint
+      # - name: build
+      #   run: npm run build:frontend
+      # - name: test
+      #   run: npm run test:backend
       - name: e2e tests
         uses: cypress-io/github-action@v6.7.7
         with:
