@@ -39,3 +39,4 @@ jobs:
             npm run start:backend:test
             npm run start:frontend
           wait-on: "http://localhost:3000"
+          wait-on-timeout: 180
