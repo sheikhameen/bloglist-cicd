@@ -15,7 +15,8 @@
     "start:test": "npm run start:test --prefix backend",
     "build": "rm -rf backend/build && npm run build --prefix frontend && mv frontend/build backend/",
     "test:backend": "npm run test --prefix backend",
-    "cy:run": "npm run cy:run --prefix frontend",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
     "e2e": "start-server-and-test start:test http://localhost:3003 cy:run",
     "lint": "npm run lint --prefix frontend"
   },
