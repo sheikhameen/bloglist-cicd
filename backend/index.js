@@ -2,7 +2,7 @@ const http = require("http");
 const app = require("./app");
 
 const config = require("./utils/config");
-const { info, error } = require("./utils/logger");
+const { info } = require("./utils/logger");
 
 const server = http.createServer(app);
 

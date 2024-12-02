@@ -18,7 +18,7 @@
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "e2e": "start-server-and-test start:test http://localhost:3003 cy:run",
-    "lint": "npm run lint --prefix frontend"
+    "lint": "npm run lint --prefix frontend && npm run lint --prefix backend"
   },
   "devDependencies": {
     "cypress": "^13.16.0",
