@@ -36,7 +36,7 @@ Cypress.Commands.add("createBlog", ({ title, author, url, likes }) => {
     },
   });
 
-  cy.visit("http://localhost:3000");
+  cy.visit("http://localhost:3003");
 });
 
 Cypress.Commands.add("createUser", ({ name, username, password }) => {
